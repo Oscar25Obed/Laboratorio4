@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Noticias</title>
+  <style>
+    /* Estilos para el carrusel */
+    .carousel-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .carousel {
+      width: 500px;
+      height: 300px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: auto;
+    }
+
+    .carousel .carousel-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      justify-content:  center;
+      align-items: center;
+    }
+
+    .carousel .carousel-inner .carousel-item {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .carousel .carousel-inner .active {
+      opacity: 1;
+    }
+
+    /* Estilos para los controles del carrusel */
+    .carousel-controls {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .carousel-controls button {
+      margin: 0 5px;
+    }
+    .title {
+      font-size: 38px;
+      font-weight: bold;
+      text-align: center;
+      justify-content: center;
+      color: #000000;
+      font-family: "Brush Script MT", cursive;
+      z-index: 1;
+    }
+    
+  </style>
+</head>
+<body>
+  <h1 class="title">Sección de noticias</h1>
+
+<div class="carousel-container">
+  <div class="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://media.telemetro.com/p/e84f94cab1ab7a60a1083718719a07b8/adjuntos/311/imagenes/017/957/0017957757/855x0/smart/utp.jpg" alt="Imagen 1">
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.diaadia.com.pa/sites/default/files/styles/article850x500/public/2019-03/utp.jpg?itok=nsXpfHTs" alt="Imagen 2">
+      </div>
+      <div class="carousel-item">
+        <img src="https://utp.ac.pa/sites/default/files/styles/noticias_principal_hv/public/fachada_utp_2.jpg?itok=Bgp092Pl" alt="Imagen 3">
+      </div>
+    </div>
+  </div>
+
+  <div class="carousel-controls">
+    <button onclick="changeSlide(-1)">Anterior</button>
+    <button onclick="changeSlide(1)">Siguiente</button>
+  </div>
+
+  <script>
+    // Cambiar de diapositiva
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function changeSlide(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+      let slides = document.getElementsByClassName("carousel-item");
+      if (n > slides.length) {
+        slideIndex = 1;
+      }
+      if (n < 1) {
+        slideIndex = slides.length;
+      }
+      for (let i = 0; i < slides.length; i++) {
+        slides[i].style.opacity = 0;
+      }
+      slides[slideIndex - 1].style.opacity = 1;
+    }
+  </script>
+</body>
+</html>
