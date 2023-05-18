@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Página de Noticias</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .news-section {
+      margin-bottom: 30px;
+    }
+
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+    }
+
+    .slide {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .news-item {
+      margin-bottom: 20px;
+    }
+
+    .news-item .image {
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .news-item .title {
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .news-item .description {
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Página de Noticias</h1>
+
+    <div class="news-section">
+      <h2>Últimas noticias</h2>
+      <div class="slider">
+        <img class="slide active" src="https://i.ytimg.com/vi/c-60-IVDvks/maxresdefault.jpg" alt="Noticia 1">
+        <img class="slide" src="https://pbs.twimg.com/amplify_video_thumb/1658442606722924545/img/XWWKIvdlrq5-0wXn.jpg" alt="Noticia 2">
+        <img class="slide" src="https://media.datacenterdynamics.com/media/images/Extra.width-880.jpg" alt="Noticia 3">
+      </div>
+
+    <!-- Resto del contenido de la página -->
+
+  </div>
+
+  <script>
+    // JavaScript para controlar el carrusel
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        if (i === index) {
+          slide.classList.add('active');
+        } else {
+          slide.classList.remove('active');
+        }
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    setInterval(nextSlide, 3000);
+  </script>
+</body>
+</html>
+``
