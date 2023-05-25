@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Portafolio</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        h1, h2 {
+            margin: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .project {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .project img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .project h3 {
+            margin-top: 10px;
+            color: #333;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        .skill {
+            width: 120px;
+            text-align: center;
+            margin: 10px;
+            padding: 10px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            color: #555;
+            font-weight: bold;
+        }
+        .contact-form {
+            margin-top: 40px;
+            text-align: center;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Carlos Garay</h1>
+        <h2>Estudiante de Ingeniería de Software</h2>
+    </header>
+    <div class="container">
+        <h2>Proyectos</h2>
+        <div class="project">
+            <img src="imagen-proyecto1.jpg" alt="Proyecto 1">
+            <h3>Proyecto ABC</h3>
+            <p>Descripción del proyecto ABC.</p>
+        </div>
+        
+        <h2>Habilidades</h2>
+        <div class="skills">
+            <div class="skill">Desarrollo web front-end</div>
+            <div class="skill">Diseño de interfaces</div>
+            <div class="skill">Programación en Java</div>
+            <div class="skill">Gestión de bases de datos</div>
+            <div class="skill">Resolución de problemas</div>
+            <div class="skill">Análisis de requerimientos</div>
+        </div>
+        
+        <h2>Contacto</h2>
+        <div class="contact-form">
+            <input type="text" placeholder="Nombre">
+            <input type="email" placeholder="Correo electrónico">
+            <textarea placeholder="Mensaje"></textarea>
+            <button>Enviar</button>
+        </div>
+    </div>
+</body>
+</html>
